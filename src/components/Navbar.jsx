@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeDown, slideInRight } from '../animations/variant.js';
 import Logo from "../assets/images/Logo.png";
@@ -8,11 +9,11 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Projects', href: '#projects' },
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Pricing', path: '/pricing' },
+    { name: 'Projects', path: '/projects' },
   ];
 
   return (
@@ -32,12 +33,12 @@ const Navbar = () => {
       <ul className="hidden md:flex justify-center space-x-8">
         {navLinks.map((item, index) => (
           <li key={index}>
-            <a
-              href={item.href}
+            <Link
+              to={item.path}
               className="hover:text-[#007bff] text-[18px] font-medium transition-colors duration-300"
             >
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -80,13 +81,13 @@ const Navbar = () => {
             <ul className="flex flex-col space-y-6">
               {navLinks.map((item, index) => (
                 <li key={index}>
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.path}
                     className="text-[20px] font-semibold hover:text-[#007bff] transition-colors duration-300"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

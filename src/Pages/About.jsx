@@ -16,7 +16,7 @@ import Edinburgh from "../assets/images/edinburgh.png";
 import Trustpilot from "../assets/images/trustpilot.png";
 import Footer from "../components/Footer.jsx";
 
-const Home = () => {
+const About = () => {
   const services = [
     { title: "Electrical", img: Electrical },
     { title: "Plumbing", img: Plumbing },
@@ -141,4 +141,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default About;
