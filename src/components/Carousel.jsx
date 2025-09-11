@@ -61,7 +61,7 @@ const Carousel = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
-          className="flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-50 pt-6 md:pt-12 lg:pt-[70px]"
+          className="flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-30 pt-6 md:pt-12 lg:pt-[70px]"
         >
           {/* Electrical */}
           <motion.div variants={fadeSlideIn} className="flex space-x-3 md:space-x-4 lg:space-x-4">

@@ -6,7 +6,7 @@ export const slideInRight = {
 
 export const fadeSlideIn = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.2 } }
 }
 
 export const staggerContainer = {
@@ -23,7 +23,16 @@ export const underlineGrow = {
   visible: { scaleX: 1, transition: { duration: 0.5 }, transformOrigin: 'left' }
 };
 
-// animations/variant.js
+export const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.2, ease: "easeOut" },
+  },
+};
+
+
 
 export const fadeDown = {
   hidden: {
@@ -34,9 +43,11 @@ export const fadeDown = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.2,
       ease: 'easeOut',
     },
   },
 }
+
+
 

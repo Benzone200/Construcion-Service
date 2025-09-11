@@ -2,125 +2,141 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeDown, fadeSlideIn, underlineGrow, staggerContainer } from '../animations/variant.js';
 import Navbar from "../components/Navbar.jsx";
+import Carousel from "../components/Carousel.jsx"
 import Footer from "../components/Footer.jsx";
 
 const Pricing = () => {
-  const pricingPlans = [
-    {
-      title: "Basic Service",
-      price: "$99",
-      features: [
-        "Initial consultation",
-        "Basic repairs",
-        "1 year warranty",
-        "24/7 support"
-      ]
-    },
-    {
-      title: "Standard Service",
-      price: "$199",
-      features: [
-        "Everything in Basic",
-        "Advanced repairs",
-        "2 year warranty",
-        "Priority support",
-        "Free estimates"
-      ]
-    },
-    {
-      title: "Premium Service",
-      price: "$299",
-      features: [
-        "Everything in Standard",
-        "Full renovation",
-        "5 year warranty",
-        "Dedicated project manager",
-        "Free maintenance"
-      ]
-    }
-  ];
-
   return (
     <>
       <Navbar />
-      <section className="py-[50px] bg-[#f5f5f5] min-h-screen">
-        {/* Section Heading */}
-        <motion.div
-          className="text-center mb-12"
-          variants={fadeDown}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-        >
-          <h1 className="text-[35px] md:text-[45px] font-extrabold text-[#333333] leading-auto">Our Pricing Plans</h1>
-          <motion.div
-            className="border border-[#007bff] w-[130px] h-[10px] bg-[#007bff] mx-auto mt-4"
-            variants={underlineGrow}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false }}
-          />
-          <p className="text-[18px] text-[#666] mt-4 max-w-2xl mx-auto">
-            Choose the perfect plan for your home or office maintenance needs. All plans include professional service and satisfaction guarantee.
-          </p>
-        </motion.div>
-
-        {/* Pricing Cards */}
-        <motion.div
-          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-        >
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={index}
-                className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden border border-[#007bff]"
-                variants={fadeSlideIn}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false }}
-              >
-                <div className="bg-[#007bff] text-white text-center py-6">
-                  <h3 className="text-[24px] font-bold">{plan.title}</h3>
-                  <div className="text-[40px] font-extrabold mt-2">{plan.price}</div>
-                  <p className="text-[14px] opacity-90">per service</p>
-                </div>
-                <div className="p-6">
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-center text-[16px]">
-                        <span className="text-[#007bff] mr-3">✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="w-full bg-[#007bff] text-white py-3 px-6 rounded-lg mt-6 hover:bg-[#0056b3] transition-colors duration-300 font-semibold">
-                    Choose Plan
-                  </button>
-                </div>
-              </motion.div>
-            ))}
+      <Carousel />
+      
+      <section className="bg-gray-50 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Pricing Section */}
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+              Simple & Transparent Pricing
+            </h2>
+            <div className="w-20 sm:w-28 md:w-32 h-1 bg-blue-500 mx-auto"></div>
+            <div className="inline-block mt-4 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm md:text-base text-gray-600">
+              Choose the plan that suits your needs, or request a custom quote tailored to your project.
+            </div>
           </div>
-        </motion.div>
 
-        {/* Call to Action */}
-        <motion.div
-          className="text-center mt-16"
-          variants={fadeDown}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-        >
-          <h2 className="text-[28px] font-bold text-[#333333] mb-4">Need a Custom Quote?</h2>
-          <p className="text-[18px] text-[#666] mb-6">Contact us for personalized pricing based on your specific requirements.</p>
-          <button className="bg-[#007bff] text-white py-3 px-8 rounded-lg hover:bg-[#0056b3] transition-colors duration-300 font-semibold">
-            Get Free Quote
-          </button>
-        </motion.div>
+          {/* Pricing Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16">
+            {/* Call-Out Fee Card */}
+            <div className="bg-white rounded-lg border-2 border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg transition-all hover:scale-105">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-6">Call-Out Fee</h3>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">$50</div>
+              <p className="text-gray-600 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
+                Covers initial site visit and consultation
+              </p>
+              <button className="w-full bg-blue-500 text-white py-2.5 sm:py-3 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors text-sm sm:text-base">
+                Book Now
+              </button>
+            </div>
+
+            {/* Hourly Rate Card */}
+            <div className="bg-white rounded-lg border-2 border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg transition-all hover:scale-105">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-6">Hourly Rate</h3>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
+                $40<span className="text-base sm:text-lg">/hr</span>
+              </div>
+              <p className="text-gray-600 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
+                Covers initial site visit and consultation
+              </p>
+              <button className="w-full bg-blue-500 text-white py-2.5 sm:py-3 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors text-sm sm:text-base">
+                Get Started
+              </button>
+            </div>
+
+            {/* Service Packages Card */}
+            <div className="bg-white rounded-lg border-2 border-gray-200 p-6 sm:p-8 text-center hover:shadow-lg transition-all hover:scale-105">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-6">Service Packages</h3>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
+                <span className="text-sm sm:text-base md:text-lg font-normal">From </span>$100
+              </div>
+              <p className="text-gray-600 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
+                Covers initial site visit and consultation
+              </p>
+              <button className="w-full bg-blue-500 text-white py-2.5 sm:py-3 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors text-sm sm:text-base">
+                Choose Plan
+              </button>
+            </div>
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+              Need Something Specific?
+            </h2>
+            <div className="w-16 sm:w-20 md:w-24 h-1 bg-blue-500 mx-auto"></div>
+          </div>
+
+          {/* Form */}
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {/* Name Field */}
+              <div>
+                <label className="block text-gray-700 font-medium mb-2 sm:mb-3">Name</label>
+                <input
+                  type="text"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm sm:text-base"
+                />
+              </div>
+
+              {/* Email Field */}
+              <div>
+                <label className="block text-gray-700 font-medium mb-2 sm:mb-3">Email</label>
+                <input
+                  type="email"
+                  placeholder="example@gmail.com"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm sm:text-base"
+                />
+              </div>
+
+              {/* Phone Number Field */}
+              <div>
+                <label className="block text-gray-700 font-medium mb-2 sm:mb-3">Phone Number</label>
+                <input
+                  type="tel"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm sm:text-base"
+                />
+              </div>
+
+              {/* Service Needed Field */}
+              <div>
+                <label className="block text-gray-700 font-medium mb-2 sm:mb-3">Service Needed</label>
+                <div className="relative">
+                  <select className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-sm sm:text-base appearance-none bg-white">
+                    <option value="">Select a service</option>
+                    <option value="electrical">Electrical Services</option>
+                    <option value="plumbing">Plumbing Services</option>
+                    <option value="renovation">Renovation & Remodeling</option>
+                    <option value="maintenance">General Maintenance</option>
+                    <option value="emergency">Emergency Repairs</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                    <svg className="w-4 sm:w-5 h-4 sm:h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Submit Button */}
+            <div className="text-center mt-8 sm:mt-12">
+              <button className="bg-blue-500 text-white py-3 sm:py-4 px-8 sm:px-12 rounded-lg font-medium hover:bg-blue-600 transition-colors text-base sm:text-lg">
+                Get Your Quote
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
+
       <Footer />
     </>
   );

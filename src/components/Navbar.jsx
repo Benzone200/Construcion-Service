@@ -22,7 +22,7 @@ const Navbar = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false }}
-      className="flex items-center justify-between px-6 py-4 pt-[40px] relative"
+      className="flex items-center justify-between px-6 py-4 pt-[12px] relative"
     >
       {/* Logo */}
       <div className="flex-1">
@@ -54,7 +54,7 @@ const Navbar = () => {
       </div>
 
       {/* Hamburger Icon */}
-      <div className="md:hidden absolute right-6 top-[45px] z-50">
+      <div className="md:hidden absolute right-6 top-[20px] z-50">
         <button onClick={toggleMenu} className="text-[#007bff]" aria-label="Toggle menu">
           {isOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
