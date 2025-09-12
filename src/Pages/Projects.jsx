@@ -2,147 +2,103 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeDown, fadeSlideIn, underlineGrow, staggerContainer } from '../animations/variant.js';
 import Navbar from "../components/Navbar.jsx";
+
+import office from "../assets/images/office.png";
+import bathroom from "../assets/images/bathroom.png";
+import commercial from "../assets/images/commercial.png";
+import drainage from "../assets/images/drainage.png";
+import factory from "../assets/images/factory.png";
+import furn from "../assets/images/furn.png";
+import home from "../assets/images/home.png";
+import kitchen from "../assets/images/kitchen.png";
+import lighting from "../assets/images/lighting.png";
+import remodel from "../assets/images/remodel.png";
+import residential from "../assets/images/residential.png";
+import wall from "../assets/images/wall.png";
 import Footer from "../components/Footer.jsx";
-import Electrical from "../assets/images/electrical.png";
-import Plumbing from "../assets/images/plumbing.png";
-import Renovation from "../assets/images/renovation.png";
-import Repairs from "../assets/images/repairs.png";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Complete Home Renovation",
-      category: "Renovation",
-      description: "Full kitchen and bathroom renovation with modern fixtures and finishes.",
-      image: Renovation,
-      status: "Completed"
-    },
-    {
-      title: "Electrical System Upgrade",
-      category: "Electrical",
-      description: "Complete electrical panel upgrade and wiring modernization for safety compliance.",
-      image: Electrical,
-      status: "Completed"
-    },
-    {
-      title: "Plumbing Installation",
-      category: "Plumbing",
-      description: "New plumbing system installation for residential property with water-saving fixtures.",
-      image: Plumbing,
-      status: "In Progress"
-    },
-    {
-      title: "Emergency Repairs",
-      category: "Repairs",
-      description: "24/7 emergency repair service for burst pipes and electrical faults.",
-      image: Repairs,
-      status: "Completed"
-    },
-    {
-      title: "Office Building Maintenance",
-      category: "Maintenance",
-      description: "Ongoing maintenance contract for commercial office building systems.",
-      image: Renovation,
-      status: "Ongoing"
-    },
-    {
-      title: "Smart Home Integration",
-      category: "Electrical",
-      description: "Installation of smart home automation systems and energy-efficient lighting.",
-      image: Electrical,
-      status: "Completed"
-    }
-  ];
+  const filters = ["All", "Electrical", "Plumbing", "Renovation", "Repairs"];
 
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'Completed':
-        return 'bg-green-500';
-      case 'In Progress':
-        return 'bg-yellow-500';
-      case 'Ongoing':
-        return 'bg-blue-500';
-      default:
-        return 'bg-gray-500';
-    }
-  };
+  const images = [
+    { src: office, alt: "Office Window Installation" },
+    { src: home, alt: "Home Pest Control" },
+    { src: furn, alt: "Furniture Repair" },
+    { src: remodel, alt: "Office Remodeling" },
+    { src: kitchen, alt: "Kitchen Renovation" },
+    { src: residential, alt: "Residential Electrical" },
+    { src: commercial, alt: "Commercial Plumbing" },
+    { src: wall, alt: "Wall Crack Fix" },
+    { src: lighting, alt: "Office Lighting Installations" },
+    { src: factory, alt: "Factory Power Upgrade" },
+    { src: bathroom, alt: "Bathroom Remodeling" },
+    { src: drainage, alt: "Drainage Fix" },
+  ];
 
   return (
     <>
       <Navbar />
-      <section className="py-[50px] bg-[#f5f5f5] min-h-screen">
-        {/* Section Heading */}
-        <motion.div
-          className="text-center mb-12"
-          variants={fadeDown}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-        >
-          <h1 className="text-[35px] md:text-[45px] font-extrabold text-[#333333] leading-auto">Our Projects</h1>
+      <section className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          
+          {/* Title */}
           <motion.div
-            className="border border-[#007bff] w-[130px] h-[10px] bg-[#007bff] mx-auto mt-4"
-            variants={underlineGrow}
+            className="text-center mb-10"
+            variants={fadeDown}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false }}
-          />
-          <p className="text-[18px] text-[#666] mt-4 max-w-2xl mx-auto">
-            Explore our portfolio of completed projects showcasing our expertise in construction and maintenance services.
-          </p>
-        </motion.div>
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
+            <motion.div
+              className="border border-[#007bff] w-[80px] sm:w-[100px] md:w-[130px] h-[4px] md:h-[8px] bg-[#007bff] mx-auto"
+              variants={underlineGrow}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+            />
+          </motion.div>
 
-        {/* Projects Grid */}
-        <motion.div
-          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-        >
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden"
+          {/* Filter Buttons */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+          >
+            {filters.map((filter, i) => (
+              <motion.button
+                key={i}
+                className="px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-medium transition-all duration-300 text-black hover:bg-blue-500 hover:text-white text-sm sm:text-base"
                 variants={fadeSlideIn}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false }}
+                custom={i}
               >
-                <div className="relative">
-                  <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                  <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-white text-sm font-semibold ${getStatusColor(project.status)}`}>
-                    {project.status}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="text-[#007bff] text-sm font-semibold mb-2">{project.category}</div>
-                  <h3 className="text-[20px] font-bold text-[#333333] mb-3">{project.title}</h3>
-                  <p className="text-[16px] text-[#666] mb-4">{project.description}</p>
-                  <button className="text-[#007bff] font-semibold hover:text-[#0056b3] transition-colors duration-300">
-                    View Details →
-                  </button>
-                </div>
-              </motion.div>
+                {filter}
+              </motion.button>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Call to Action */}
-        <motion.div
-          className="text-center mt-16"
-          variants={fadeDown}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false }}
-        >
-          <h2 className="text-[28px] font-bold text-[#333333] mb-4">Ready to Start Your Project?</h2>
-          <p className="text-[18px] text-[#666] mb-6">Let's discuss your requirements and create something amazing together.</p>
-          <button className="bg-[#007bff] text-white py-3 px-8 rounded-lg hover:bg-[#0056b3] transition-colors duration-300 font-semibold">
-            Get Started
-          </button>
-        </motion.div>
+          {/* Project Images */}
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+          >
+            {images.map((img, i) => (
+              <motion.img
+                key={i}
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-80 sm:h-56 md:h-64  lg:w-[300px] lg:h-[70] object-cover shadow-lg hover:scale-105 transition-transform duration-300 rounded-md"
+                variants={fadeSlideIn}
+                custom={i}
+              />
+            ))}
+          </motion.div>
+        </div>
       </section>
       <Footer />
     </>
