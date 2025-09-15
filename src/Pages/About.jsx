@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { fadeDown, fadeUp, underlineGrow, staggerContainer } from '../animations/variant.js';
 import Navbar from "../components/Navbar.jsx"
 import Carousel from "../components/Carousel.jsx";
-import James from "../assets/images/James.png"
+import James from "../assets/images/james.png"
 import Sophia from "../assets/images/Sophia.png"
 import Michael from "../assets/images/Michael.png"
 import Mason from "../assets/images/Mason.png"
