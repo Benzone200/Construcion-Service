@@ -4,10 +4,10 @@ import { fadeDown, fadeUp, underlineGrow, staggerContainer } from '../animations
 import Navbar from "../components/Navbar.jsx"
 import Carousel from "../components/Carousel.jsx";
 import James from "../assets/images/james.png"
-import Sophia from "../assets/images/Sophia.png"
-import Michael from "../assets/images/Michael.png"
-import Mason from "../assets/images/Mason.png"
-import Jemmy from "../assets/images/Jemmy.png"
+import Sophia from "../assets/images/sophia.png"
+import Michael from "../assets/images/michael.png"
+import Mason from "../assets/images/mason.png"
+import Jemmy from "../assets/images/jemmy.png"
 import Footer from "../components/Footer.jsx";
 
 const About = () => {
