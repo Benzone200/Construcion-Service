@@ -54,7 +54,7 @@ const Services = () => {
       variants={cardVariant}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.2 }}
       custom={i}
     >
       <img
@@ -66,7 +66,7 @@ const Services = () => {
         <h3 className="text-lg md:text-xl lg:text-[22px] font-bold text-gray-800">
           {title}
         </h3>
-        <div className={`border border-blue-500 bg-blue-500 ${width} h-[4px] md:h-[5px] mb-3`}></div>
+        <div className="mb-2"></div>
         <p className="text-sm md:text-base text-gray-600 max-w-xs">
           {text}
         </p>
@@ -86,7 +86,7 @@ const Services = () => {
       <Carousel />
 
       {/* Electrical Services */}
-      <section className="mt-10 px-4 md:px-10 lg:mx-20">
+      <section className="mt-10 px-4 md:px-10 lg:mx-20 ">
         <div className="mb-6 md:mb-10 text-center md:text-left">
           <h2 className="text-2xl md:text-3xl lg:text-[35px] font-extrabold text-[#333333]">
             Electrical Services
@@ -139,7 +139,7 @@ const Services = () => {
         </h2>
         <div className="border border-blue-500 bg-blue-500 w-[100px] md:w-[140px] h-[5px] md:h-[7px] mx-auto md:mx-0"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-14 lg:gap-20 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-14 lg:gap-20 lg:mb-30 mt-6">
           {renderCard(0, furniture, "Furniture Repairs", "w-[60px]", sampleText, 3)}
           {renderCard(1, support, "Customer Support", "w-[60px]", sampleText, 3)}
           {renderCard(2, clean, "Cleaning Services", "w-[60px]", sampleText, 3)}

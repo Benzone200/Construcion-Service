@@ -121,7 +121,7 @@ const About = () => {
                   key={i}
                   src={img}
                   variants={fadeUp}
-                  className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[350px] hover:scale-110 shadow-md"
+                  className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[420px] hover:scale-110 shadow-md"
                 />
               ))}
             </div>
@@ -151,7 +151,7 @@ const About = () => {
 
             <motion.form
               variants={fadeUp}
-              className="w-full max-w-full sm:max-w-[90%] md:max-w-[800px] lg:max-w-[1000px] p-4 sm:p-5 space-y-6 sm:space-y-8 md:space-y-10 ml-0 sm:ml-4 md:ml-8 lg:ml-[50px] mt-4 sm:mt-6 md:mt-[20px]"
+              className="w-full max-w-full sm:max-w-[90%] md:max-w-[800px] lg:max-w-[1000px] p-4 sm:p-5 space-y-6 sm:space-y-8 md:space-y-10 ml-0 sm:ml-4 md:ml-8 lg:ml-[16%] mt-4 sm:mt-6 md:mt-[20px]"
             >
               {/* First and Last Name */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-12">

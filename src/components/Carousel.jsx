@@ -13,11 +13,11 @@ const Carousel = () => {
   const images = [bg1, bg2, bg3];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-slide every 5 seconds
+  // Auto-slide every 8 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    }, 4000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [images.length]);
 
