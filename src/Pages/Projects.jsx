@@ -92,7 +92,7 @@ const Projects = () => {
                 key={i}
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-80 sm:h-56   lg:w-[400px] lg:h-[350px] object-cover shadow-lg hover:scale-105 transition-transform duration-300 rounded-md"
+                className="w-full h-80 sm:h-56 lg:w-[400px] lg:h-[350px] object-cover shadow-lg hover:scale-105 transition-transform duration-300 rounded-md"
                 variants={fadeSlideIn}
                 custom={i}
               />
